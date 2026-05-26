@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Portfolio & Web Tools</title>
+    <link rel="stylesheet" href="WebsiteMain.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="background-shapes"></div>
+
+    <main class="glass-container">
+        <section class="profile-section">
+            <div class="profile-pic-container">
+                <img src="GambarFiras(1).jpg" alt="Profile Picture" class="profile-pic">
+            </div>
+            <h1>MUHAMMAD FIRAS DANISH BIN YUSRI</h1>
+            <p class="badge">A25DW0057 | Computer Science, Section 45</p>
+            
+            <div class="bio-content">
+                <h3>Academic Background</h3>
+                <p>Semasa saya disekolah menengah, saya mengambil aliran Sastera dimana saya mengambil matapelajaran Perniagaan, Ekonomi Dan Tassawur Islam. Saya Mendapat 5A Dalam Sijil Pelajaran Malaysia Pada Tahun 2024 Dan Memperoleh Anugerah Cemerlang SPM peringkat Sekolah. Saya Meneruskan Perjalanan Pendidkan saya pada peringkat Diploma di sebuah universiti terkemuka dimalaysia iaitu Universiti Teknologi Malaysia Dibawah Program Sains Komputer Selama Dua Tahun Setengah Dan bercadang untuk Melaanjutkan Pelajaran Saya Diperingkat Ijazah Sarjana Muda pada masa akan datang dibawah program Kejuteraan Pengkomputeran Di Institusi MJIIT Kuala Lumpur pada masa akan datang.</p>
+                
+                <h3>Personal Interests</h3>
+                <p>Selain Coding, saya juga berminat dalam menghasilkan karya photography dan video editing. Selain Itu juga saya suka pergi berjalan untuk mencuba pelbagai benda baru seperti makanan baru dan tempat-tempat baru yang belum diterokai. Saya juga berminat dalam Perbahasan Dan Percakapan Umum. </p>
+            </div>
+
+            <div class="cv-links">
+                <a href="FIRASDANISH_RESUME (1).pdf" class="btn-cv">View CV (HTML)</a>
+                <a href="FIRASDANISH_RESUME (1).pdf" download class="btn-cv outline">Download CV (PDF)</a>
+            </div>
+        </section>
+
+        <section class="tools-section">
+            <h2>Interactive Web Tools</h2>
+            <p class="tools-desc">Select a tool to launch the interactive module.</p>
+            
+            <div class="tools-grid">
+                <button class="tool-btn" onclick="openModal('calcModal')">
+                    <span class="icon">🧮</span> Simple Calculator
+                </button>
+                <button class="tool-btn" onclick="openModal('bmiModal')">
+                    <span class="icon">⚖️</span> BMI Checker
+                </button>
+                <button class="tool-btn" onclick="openModal('taxModal')">
+                    <span class="icon">💰</span> Income Tax
+                </button>
+                <button class="tool-btn" onclick="openModal('unitModal')">
+                    <span class="icon">📏</span> Unit Converter
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <div id="calcModal" class="modal">
+        <div class="modal-content glass-card">
+            <span class="close" onclick="closeModal('calcModal')">&times;</span>
+            <h2>Simple Calculator</h2>
+            <input type="number" id="num1" placeholder="First Number">
+            <input type="number" id="num2" placeholder="Second Number">
+            <div class="action-grid">
+                <button onclick="calculate('+')">Add (+)</button>
+                <button onclick="calculate('-')">Subtract (-)</button>
+                <button onclick="calculate('*')">Multiply (×)</button>
+                <button onclick="calculate('/')">Divide (÷)</button>
+            </div>
+            <p id="calcRes" class="result-display">Result: -</p>
+        </div>
+    </div>
+
+ <div id="bmiModal" class="modal">
+        <div class="modal-content glass-card">
+            <span class="close" onclick="closeModal('bmiModal')">&times;</span>
+            <h2>BMI Checker</h2>
+            <input type="number" id="bmiWeight" placeholder="Weight (kg) - e.g., 65">
+            <input type="number" id="bmiHeight" placeholder="Height (cm) - e.g., 170">
+            <button class="full-btn" onclick="checkBMI()">Calculate BMI</button>
+            <p id="bmiRes" class="result-display">Result: -</p>
+        </div>
+    </div>
+
+    <div id="taxModal" class="modal">
+        <div class="modal-content glass-card">
+            <span class="close" onclick="closeModal('taxModal')">&times;</span>
+            <h2>Income Tax Calculator</h2>
+            <input type="number" id="taxIncome" placeholder="Annual Income (RM)">
+            <button class="full-btn" onclick="checkTax()">Estimate Tax</button>
+            <p id="taxRes" class="result-display">Result: -</p>
+        </div>
+    </div>
+
+    <div id="unitModal" class="modal">
+        <div class="modal-content glass-card">
+            <span class="close" onclick="closeModal('unitModal')">&times;</span>
+            <h2>Unit Converter</h2>
+            <input type="number" id="unitInput" placeholder="Enter Value">
+            <div class="action-grid">
+                <button onclick="convertUnit('cmToM')">cm to m</button>
+                <button onclick="convertUnit('mToCm')">m to cm</button>
+                <button onclick="convertUnit('mToKm')">m to km</button>
+                <button onclick="convertUnit('kmToM')">km to m</button>
+            </div>
+            <p id="unitRes" class="result-display">Result: -</p>
+        </div>
+    </div>
+
+    <script src="WebsiteMain.js"></script>
+</body>
+</html>
